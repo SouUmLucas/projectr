@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
-public class UsersController implements RestController {
+public class UsersController extends AbstractRestController {
 
     @GetMapping("/users")
     public String index() {
