@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${systemTitle}"></title>
+</head>
+    <body>
+        <h3 th:text="${result}"></h3>
+        Cliente código: <p th:text="${clientId}"></p>
+
+        <form method="get" action="/client/1/update">
+            <button type="submit">Atualizar</button>
+        </form>
+        <form method="get" action="/client/1/delete">
+            <button type="submit">Apagar</button>
+        </form>
+    </body>
+</html>
