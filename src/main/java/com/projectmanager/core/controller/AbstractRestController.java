@@ -1,28 +1,33 @@
 package com.projectmanager.core.controller;
 
+import org.springframework.ui.Model;
+
 public class AbstractRestController implements RestController {
+    protected String SYSTEM_TITLE = "Projectr";
+
     @Override
-    public String index() {
+    public String index(Model model) {
         return null;
     }
 
     @Override
-    public String show() {
+    public String create(Model model) {
         return null;
     }
 
     @Override
-    public String create() {
+    public String show(int id, Model model) {
         return null;
     }
 
     @Override
-    public String update() {
+    public String update(int id, Model model) {
         return null;
     }
 
     @Override
-    public String delete() {
-        return null;
-    }
+    public String delete(int id, Model model) {
+		return null;
+	}
+
 }

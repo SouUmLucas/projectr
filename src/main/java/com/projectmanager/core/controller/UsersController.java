@@ -1,44 +1,43 @@
 package com.projectmanager.core.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UsersController extends AbstractRestController {
 
+    @Override
     @GetMapping("/users")
-    public String index() {
+    public String index(Model model) {
         // TODO: fetch a list of users from database
         return "user/index";
     }
 
     @Override
+    @PostMapping("/user")
+    public String create(Model model) {
+        // TODO
+        return "user/show";
+    }
+
+    @Override
     @GetMapping("/users/{id}")
-    public String show() {
+    public String show(@PathVariable int id, Model model) {
         // TODO: fetch an user from database
         return "user/show";
     }
 
     @Override
-    @PostMapping("/user")
-    public String create() {
+    @GetMapping("/user/{id}")
+    public String update(@PathVariable int id, Model model) {
         // TODO
         return "user/show";
     }
 
     @Override
-    @PutMapping("/user/{id}")
-    public String update() {
-        // TODO
-        return "user/show";
-    }
-
-    @Override
-    @DeleteMapping("/user/{id}")
-    public String delete() {
+    @GetMapping("/user/{id}")
+    public String delete(@PathVariable int id, Model model) {
         // TODO
         return "user/index";
     }
